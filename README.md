@@ -1,6 +1,6 @@
 ![Logo](http://i.imgur.com/ZXQUpbq.png)
 
-## What is this script?
+## What is this?
 PYg0odwin is a script, which allows you to simulate http-flood DDoS atacks on test rounds. It's written in pure Python and uses proxy-servers as "bots".
 
 [Download](https://github.com/JamesJGoodwin/PYg0odwin/releases/tag/0.0.1)
