@@ -19,7 +19,7 @@ Disadvantages:
 * :x: No Redirection Support
 
 ## Dependencies
-* :snake: Python 3.3
+* Python 3.3+
 * [Requests](https://github.com/kennethreitz/requests)
 
 ## Files
