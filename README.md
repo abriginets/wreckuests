@@ -9,7 +9,7 @@ PYg0odwin is a script, which allows you to simulate http-flood DDoS atacks on te
 ## Description
 Advantages:
 * :white_check_mark: UserAgent Substitution
-* :white_check_mark: Randomly generated referers with random links and keywords
+* :white_check_mark: Randomly generated referers + keywords combinations (1000 keywords * 350 referer links = 350k possible combinations)
 * :white_check_mark: HTTP Proxy Support
 * :white_check_mark: Good perfomance implementation (threads with bad proxies will be stopped to gain some perfomance for threads with good proxies)
 
