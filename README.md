@@ -11,11 +11,10 @@ Advantages:
 * :white_check_mark: UserAgent Substitution
 * :white_check_mark: Randomly generated referers with random links and keywords
 * :white_check_mark: HTTP Proxy Support
+* :white_check_mark: Good perfomance implementation (threads with bad proxies will be stopped to gain some perfomance for threads with good proxies)
 
 Disadvantages:
-* :x: Poor Multithreading Implementation
 * :x: No HTTPS Proxy Support
-* :x: Can't be stoped over CTRL+C combination(you need to forcibly kill the process in task manager)
 * :x: No Redirection Support
 
 ## Dependencies
