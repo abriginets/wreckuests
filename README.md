@@ -1,7 +1,7 @@
 ![Logo](http://i.imgur.com/ZXQUpbq.png)
 
 ## What is this?
-PYg0odwin is a script, which allows you to simulate http-flood DDoS atacks on test rounds. It's written in pure Python and uses proxy-servers as "bots".
+PYg0odwin is a script, which allows you to simulate http-flood DDoS atacks. It's written in pure Python and uses proxy-servers as "bots".
 
 [Download](https://github.com/JamesJGoodwin/PYg0odwin/releases)
 
@@ -18,7 +18,6 @@ Disadvantages:
 * :x: No Redirection Support(301 > 200, etc)
 
 ## Todo
-
 * Automatic switching beetwen HTTP and HTTPS proxies
 * Redirection Support
 * CloudFlare 'Checking your browser' bypass
@@ -28,13 +27,12 @@ Disadvantages:
 * [Requests](https://github.com/kennethreitz/requests)
 
 ## Files
-
 * `referers.txt` — referers links
 * `keywords.txt` — keywords for combining with referers
 * `user-agents.txt` — UserAgents
 * `proxy.txt` — proxies
 
-Note: all proxies in this repository has anonimity level elite and anonymous. Some proxies support HTTPS. 
+Note: all proxies in this repository has anonimity level elite and anonymous. Some of them support HTTPS as well. 
 
 ## Usage
 Type under **sudo** mode:
