@@ -11,7 +11,7 @@ Advantages:
 * :white_check_mark: UserAgent substitution
 * :white_check_mark: Referers random generations
 * :white_check_mark: HTTP proxy support
-* :white_check_mark: Good perfomance implementation <sup>(threads with bad proxies will be stopped to gain some perfomance for threads with good proxies)</sup>
+* :white_check_mark: Good perfomance implementation <sub>(threads with bad proxies will be stopped to gain some perfomance for threads with good proxies)</sub>
 
 Disadvantages:
 * :x: No automatic switching beetwen HTTP and HTTPS proxies(you can define only one type of proxies which will be using during the attack)
