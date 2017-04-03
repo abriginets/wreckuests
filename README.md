@@ -23,8 +23,8 @@ Redirection Support
 CloudFlare 'Checking your browser' bypass
 
 ## Dependencies
-Python 2.6-2.7 or 3.3+
-[Requests](https://github.com/kennethreitz/requests)
+* Python 2.6-2.7 or 3.3+
+* [Requests](https://github.com/kennethreitz/requests)
 
 ## Files
 * `referers.txt` — referers links
