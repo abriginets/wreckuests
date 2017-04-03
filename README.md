@@ -18,9 +18,9 @@ Disadvantages:
 * :x: No Redirection Support(301 > 200, etc)
 
 ## Todo
-Automatic switching beetwen HTTP and HTTPS proxies
-Redirection Support
-CloudFlare 'Checking your browser' bypass
+* Automatic switching beetwen HTTP and HTTPS proxies
+* Redirection Support
+* CloudFlare 'Checking your browser' bypass
 
 ## Dependencies
 * Python 2.6-2.7 or 3.3+
