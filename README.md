@@ -32,7 +32,7 @@ Disadvantages:
 * `user-agents.txt` — UserAgents
 * `proxy.txt` — proxies
 
-Note: all proxies in this repository has anonimity level elite and anonymous. Some of them support HTTPS as well. 
+Note: all proxies in this repository has anonimity level elite and anonymous. Some of them supports HTTPS as well. 
 
 ## Usage
 Type under **sudo** mode:
