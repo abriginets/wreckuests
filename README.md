@@ -35,11 +35,13 @@ Disadvantages:
 Note: all proxies in this repository has anonimity level elite and anonymous. Some of them supports HTTPS as well. 
 
 ## Usage
-Type under **sudo** mode:
+First of all, you should install dependencies:
+
+`apt-get install python && apt-get install python-pip && pip install requests`
+
+Then, type under **sudo** mode:
 
 `python3 goodwin.py http://example.com`
 
 ## Remember
 No DDoSing FBI, government, etc...
-
-<sup><sup>From Russia with love</sup></sup>
