@@ -9,7 +9,7 @@ PYg0odwin is a script, which allows you to run HTTP-flood DDoS attacks. It's wri
 ## Description
 Advantages:
 * :white_check_mark: UserAgent substitution
-* :white_check_mark: Referers random generations
+* :white_check_mark: Referers random generation
 * :white_check_mark: HTTP proxy support
 * :white_check_mark: Good perfomance implementation <sub>(threads with bad proxies will be stopped to gain some perfomance for threads with good proxies)</sub>
 
@@ -33,4 +33,6 @@ Then, type under **sudo** mode:
 
 `python goodwin.py http://example.com`
 
-__Feel free to make pull requests and report issues__
+
+
+*Feel free to make pull requests and report any kind of bugs and issues*
