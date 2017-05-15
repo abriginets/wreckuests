@@ -1,7 +1,7 @@
 ![Logo](http://i.imgur.com/ZXQUpbq.png)
 
 ## What is this?
-PYg0odwin is a script, which allows you to simulate http-flood DDoS atacks. It's written in pure Python and uses proxy-servers as "bots".
+PYg0odwin is a script, which allows you to run HTTP-flood DDoS attacks. It's written in pure Python and uses proxy-servers as "bots".
 
 [Download](https://github.com/JamesJGoodwin/PYg0odwin/releases)
 
@@ -25,12 +25,12 @@ TODO tasks are given in [Projects](https://github.com/JamesJGoodwin/PYg0odwin/pr
 * [Requests](https://github.com/kennethreitz/requests)
 
 ## Usage
-First of all, you should install dependencies:
+First of all, you have to install dependencies:
 
 `apt-get install python && apt-get install python-pip && pip install requests`
 
 Then, type under **sudo** mode:
 
-`python3 goodwin.py http://example.com`
+`python goodwin.py http://example.com`
 
-**Feel free to make pull requests and report issues.**
+__Feel free to make pull requests and report issues__
