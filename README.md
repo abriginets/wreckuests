@@ -18,21 +18,11 @@ Disadvantages:
 * :x: No Redirection Support(301 > 200, etc)
 
 ## Todo
-* Automatic switching beetwen HTTP and HTTPS proxies
-* Redirection Support
-* CloudFlare 'Checking your browser' bypass
+TODO tasks are given in [Projects](https://github.com/JamesJGoodwin/PYg0odwin/projects/1) section.
 
 ## Dependencies
 * Python 2.6-2.7 or 3.3+
 * [Requests](https://github.com/kennethreitz/requests)
-
-## Files
-* `referers.txt` — referers links
-* `keywords.txt` — keywords for combining with referers
-* `user-agents.txt` — UserAgents
-* `proxy.txt` — proxies
-
-Note: all proxies in this repository has anonimity level elite and anonymous. Some of them supports HTTPS as well. 
 
 ## Usage
 First of all, you should install dependencies:
@@ -43,5 +33,4 @@ Then, type under **sudo** mode:
 
 `python3 goodwin.py http://example.com`
 
-## Remember
-No DDoSing FBI, government, etc...
+**Feel free to make pull requests and report issues.**
