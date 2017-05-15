@@ -5,7 +5,7 @@ PYg0odwin is a script, which allows you to run HTTP-flood DDoS attacks. It's wri
 
 [Download](https://github.com/JamesJGoodwin/PYg0odwin/releases)
 
-**Warning:** This script is published for educational puproses only! Author will accept no responsibility for any consequence, damage or loss which might result from use.
+**Warning:** This script is published for educational purposes only! Author will accept no responsibility for any consequence, damage or loss which might result from use.
 ## Description
 Advantages:
 * :white_check_mark: UserAgent substitution
