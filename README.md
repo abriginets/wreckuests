@@ -35,4 +35,4 @@ Then, type under **sudo** mode:
 
 
 
-*Feel free to make pull requests and report any kind of bugs and issues*
+*Feel free to contribute*
