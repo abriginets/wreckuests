@@ -1,4 +1,6 @@
-![Logo](http://i.imgur.com/ZXQUpbq.png)
+<p align="center">
+  ![Logo](http://i.imgur.com/ZXQUpbq.png)
+</p>
 
 ## What is this?
 PYg0odwin is a script, which allows you to run HTTP-flood DDoS attacks. It's written in pure Python and uses proxy-servers as "bots".
@@ -11,11 +13,10 @@ Advantages:
 * :white_check_mark: UserAgent substitution
 * :white_check_mark: Referers random generation
 * :white_check_mark: HTTP proxy support
-* :white_check_mark: Good perfomance implementation <sub>(threads with bad proxies will be stopped to gain some perfomance for threads with good proxies)</sub>
+* :white_check_mark: Good perfomance implementation
 
 Disadvantages:
 * :x: No automatic switching beetwen HTTP and HTTPS proxies(you can define only one type of proxies which will be using during the attack)
-* :x: No Redirection Support(301 > 200, etc)
 
 ## Todo
 TODO tasks are given in [Projects](https://github.com/JamesJGoodwin/PYg0odwin/projects/1) section.
