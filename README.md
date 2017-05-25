@@ -1,6 +1,4 @@
-<p align="center">
-  ![Logo](http://i.imgur.com/ZXQUpbq.png)
-</p>
+![Logo](http://i.imgur.com/ZXQUpbq.png)
 
 ## What is this?
 PYg0odwin is a script, which allows you to run HTTP-flood DDoS attacks. It's written in pure Python and uses proxy-servers as "bots".
