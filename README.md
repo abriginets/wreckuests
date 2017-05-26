@@ -14,7 +14,7 @@ Advantages:
 * :white_check_mark: Good perfomance implementation
 
 Disadvantages:
-* :x: No automatic switching beetwen HTTP and HTTPS proxies(you can define only one type of proxies which will be using during the attack)
+* :x: No automatic switching beetwen HTTP and HTTPS proxies
 
 ## Todo
 TODO tasks are given in [Projects](https://github.com/JamesJGoodwin/PYg0odwin/projects/1) section.
