@@ -1,9 +1,7 @@
-![Logo](http://i.imgur.com/ZXQUpbq.png)
-
 ## What is this?
-PYg0odwin is a script, which allows you to run HTTP-flood DDoS attacks. It's written in pure Python and uses proxy-servers as "bots".
+Wreckuests is a script, which allows you to run DDoS attacks with HTTP-flood(GET/POST). It's written in pure Python and uses proxy-servers as "bots".
 
-[Download](https://github.com/JamesJGoodwin/PYg0odwin/releases)
+[Download](https://github.com/JamesJGoodwin/wreckuests/releases)
 
 **Warning:** This script is published for educational purposes only! Author will accept no responsibility for any consequence, damage or loss which might result from use.
 ## Description
