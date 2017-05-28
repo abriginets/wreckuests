@@ -44,7 +44,7 @@ def main(argv):
 		showUsage()
 		sys.exit(2)
 	for opt, arg in opts:
-		if opt == '-h':
+		if opt in ('-h', '--help'):
 			showUsage()
 			sys.exit(2)
 		elif opt in ('-t', '--target'):
