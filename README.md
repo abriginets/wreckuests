@@ -1,9 +1,11 @@
+<p align="center">
+  <a href="https://github.com/JamesJGoodwin/wreckuests/releases"><img src="https://raw.githubusercontent.com/JamesJGoodwin/wreckuests/master/logo.png" width="600" height="200" alt="logo"></a>
+</p>
+
 ## What is this?
 Wreckuests is a script, which allows you to run DDoS attacks with HTTP-flood(GET/POST). It's written in pure Python and uses proxy-servers as "bots".
 
-[Download](https://github.com/JamesJGoodwin/wreckuests/releases)
-
-**Warning:** This script is published for educational purposes only! Author will accept no responsibility for any consequence, damage or loss which might result from use.
+:warning: **Warning:** This script is published for educational purposes only! Author will accept no responsibility for any consequence, damage or loss which might result from use.
 ## Features
 * UserAgent substitution
 * Referers randomizer
@@ -24,13 +26,15 @@ TODO tasks are given in [Projects](https://github.com/JamesJGoodwin/PYg0odwin/pr
 * [netaddr](https://pypi.python.org/pypi/netaddr) (tested with 0.7.19)
 
 ## Usage
-Type under **sudo** mode:
+Type under *sudo* mode:
 
 `python3 wreckuests.py -t <target url> -a <login:pass>`
 
+### Possible parameters:
+
 `-h` or `--help`:
 
-Means *help*. Prints a message with possible parameters. 
+Prints a message with possible parameters. 
 
 `-t` or `--target`:
 
@@ -43,5 +47,8 @@ Parameter for bypassing authentication. You'r victim could enable basic HTTP aut
 ## Important
 
 A separate thread is created for each proxy address. The more proxies you use - the more threads you create. So, please, do not use way too much proxies. Otherwise, the script may exit abnormaly by meeting segmentation fault.
+
+
+
 
 *Feel free to contribute*
