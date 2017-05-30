@@ -28,18 +28,20 @@ Type under **sudo** mode:
 
 `python3 wreckuests.py -t <target url> -a <login:pass>`
 
-**-h**:
+`-h` or `--help`:
 
 Means *help*. Prints a message with possible parameters. 
 
-**-t** or **--target**:
+`-t` or `--target`:
 
 Specifies a link to the victim's site page. It could be the website's main page, someone's profile, `.php`-file or even image. Everything that has a lot of weight or is hard for server to give. The choice is yours.
 
-**-a** or **--auth**:
+`-a` or `--auth`:
 
 Parameter for bypassing authentication. You'r victim could enable basic HTTP authentication and his website will ask you to enter login and password in popup window. Victim may previously publish login and password data for his users in VK/FB/Twitter and whatever social network.
 
-**Important note**: A separate thread is created for each proxy address. The more proxies you use - the more threads you create. So, please, do not use way too much proxies. Otherwise, the script may exit abnormaly by meeting segmentation fault.
+## Important
+
+A separate thread is created for each proxy address. The more proxies you use - the more threads you create. So, please, do not use way too much proxies. Otherwise, the script may exit abnormaly by meeting segmentation fault.
 
 *Feel free to contribute*
