@@ -52,4 +52,4 @@ Parameter to control connection'n'read timeout. This option also controls termin
 
 A separate thread is created for each proxy address. The more proxies you use - the more threads you create. So, please, do not use way too much proxies. Otherwise, the script may exit abnormaly by meeting segmentation fault.
 
-:sparkles: *Feel free to contribute* :sparkles:
+<p align="center">:sparkles: *Feel free to contribute* :sparkles:</p>
