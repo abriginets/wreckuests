@@ -28,7 +28,7 @@ TODO tasks are given in [Projects](https://github.com/JamesJGoodwin/PYg0odwin/pr
 ## Usage
 Type under *sudo* mode:
 
-`python3 wreckuests.py -t <target url> -a <login:pass>`
+`python3 wreckuests.py -v <target url> -a <login:pass> -t <timeout>`
 
 ### Possible parameters:
 
@@ -36,13 +36,17 @@ Type under *sudo* mode:
 
 Prints a message with possible parameters. 
 
-`-t` or `--target`:
+`-v` or `--victim`:
 
 Specifies a link to the victim's site page. It could be the website's main page, someone's profile, `.php`-file or even image. Everything that has a lot of weight or is hard for server to give. The choice is yours.
 
 `-a` or `--auth`:
 
 Parameter for bypassing authentication. You'r victim could enable basic HTTP authentication and his website will ask you to enter login and password in popup window. Victim may previously publish login and password data for his users in VK/FB/Twitter and whatever social network.
+
+`-t` or `--timeout`(defalut: 10):
+
+Parameter to control connection'n'read timeout. This option also controls terminating time. **Note:** if you set `timeout=1` or somewhere about 2-3 seconds, the slow(but still working) proxies will not have any time to even connect to your victim's website and will not even hit it. If you still do not understand how it works - do not change this option. Also, this parameter regulates the intensiveness of requests you sending. So, if you sure your proxies are fast enough - you can reduce this value. Use this accordingly.
 
 ## Important
 
