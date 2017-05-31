@@ -7,13 +7,13 @@ Wreckuests is a script, which allows you to run DDoS attacks with HTTP-flood(GET
 
 :warning: **Warning:** This script is published for educational purposes only! Author will accept no responsibility for any consequence, damage or loss which might result from use.
 ## Features
+* Cache bypass with random `?abcd=efg` parameter
+* CloudFlare detection and notification of
+* Automatic gzip/deflate toggling
+* HTTP Authentication bypass
 * UserAgent substitution
 * Referers randomizer
-* Cache bypass with random `?abcd=efg` parameter
 * HTTP proxy support
-* Automatic gzip/deflate toggling
-* CloudFlare detection and notification of
-* HTTP Authentication bypass
 
 <sup>...and everything else that [kennethreitz/requests](https://github.com/kennethreitz/requests) can do</sup>
 
