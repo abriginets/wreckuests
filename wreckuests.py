@@ -207,7 +207,7 @@ def addressInNetwork(ip, net):
         return True
 
 def showUsage():
-	print("Usage: wreckuests.py -t <url> [-a] <login:pass> [-t] <timeout>\nPlease, read more about arguments in GitHub repository!")
+	print("Usage: wreckuests.py [-v] <victim's url> [-a] <login:pass> [-t] <timeout>\nPlease, read more about arguments in GitHub repository!")
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
