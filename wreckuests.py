@@ -131,7 +131,7 @@ def request(index):
 		payload = {random.choice(keyword): random.choice(keyword)}
 		headers = {'User-Agent': random.choice(ua),
 			'Referer': random.choice(ref) + random.choice(keyword),
-			'Accept-Encoding': 'gzip;q=0,deflate;q=0' if only_gzip < 5 else 'identity, deflate, compress, gzip',
+			'Accept-Encoding': 'gzip;q=0,deflate;q=0' if only_gzip < 5 else 'identity, deflate, compress, gzip, sdch, br',
 			'Cache-Control': 'no-cache, no-store, must-revalidate',
 			'Pragma': 'no-cache'}
 		proxy = {'http': ips[index]}
