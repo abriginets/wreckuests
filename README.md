@@ -3,7 +3,7 @@
 </p>
 
 ## What is this?
-Wreckuests is a script, which allows you to run DDoS attacks with HTTP-flood(GET/POST). It's written in pure Python and uses proxy-servers as "bots". OF COURSE, this script is not universal and you can't just drop Pentagon/NSA/whatever website with one mouse click. Each attack is unique, and for each website you'll gonna need to search for vulnerabilities and exult them. Yeap, this is your dirty and ungratefull part of job.  
+Wreckuests is a script, which allows you to run DDoS attacks with HTTP-flood(GET/POST). It's written in pure Python and uses proxy-servers as "bots". OF COURSE, this script is not universal and you can't just drop Pentagon/NSA/whatever website with one mouse click. Each attack is unique, and for each website you'll gonna need to search for vulnerabilities and exult them, which might result in hardcoding, nosleeping, etc... Yeap, this is your dirty and ungrateful part of job.  
 
 :warning: **Warning:** This script is published for educational purposes only! Author will accept no responsibility for any consequence, damage or loss which might result from use.
 ## Features
