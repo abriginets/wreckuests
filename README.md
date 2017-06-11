@@ -25,6 +25,16 @@ TODO tasks are given in [Projects](https://github.com/JamesJGoodwin/PYg0odwin/pr
 * [Requests](https://github.com/kennethreitz/requests) 2.10.0 or higher
 * [netaddr](https://pypi.python.org/pypi/netaddr) (tested with 0.7.19)
 
+## Installation
+This is so easy to install Wreckuests just in one command. Isn't it?
+
+### Ubuntu 16.04
+```
+apt-get update && apt-get dist-upgrade && apt-get install python3 && apt-get install python3-pip && pip3 install --upgrade pip && pip3 install requests && pip3 install netaddr
+```
+
+**Note:** pip3 may install requests 2.9.1. Just run `pip3 install --upgrade requests` to upgrade requests to the latest version.
+
 ## Usage
 Type under *sudo* mode:
 
