@@ -66,7 +66,7 @@ def main(argv):
 			auth = True
 			auth_login = arg.split(':')[0]
 			auth_pass = arg.split(':')[1]
-		elif opt in ('-t', '-timeout'):
+		elif opt in ('-t', '--timeout'):
 			arg = int(arg)
 			if isinstance(arg, int) and arg >= 1:
 				global timeout
