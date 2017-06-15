@@ -22,8 +22,8 @@ TODO tasks are given in [Projects](https://github.com/JamesJGoodwin/PYg0odwin/pr
 
 ## Dependencies
 * Python 3.5+
-* [Requests](https://github.com/kennethreitz/requests) 2.10.0 or higher
-* [netaddr](https://pypi.python.org/pypi/netaddr) (tested with 0.7.19)
+* [Requests](https://github.com/kennethreitz/requests) <sub>2.10.0 or higher</sub>
+* [netaddr](https://pypi.python.org/pypi/netaddr) <sub>tested with 0.7.19</sub>
 
 ## Installation
 This is so easy to install Wreckuests just in one command. Isn't it? Just clone repository in the disired directory and run installation script:
