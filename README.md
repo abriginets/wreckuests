@@ -3,11 +3,11 @@
 </p>
 
 ## What is this?
-Wreckuests is a script, which allows you to run DDoS attacks with HTTP-flood(GET/POST). It's written in pure Python and uses proxy-servers as "bots". OF COURSE, this script is not universal and you can't just drop Pentagon/NSA/whatever website with one mouse click. Each attack is unique, and for each website you'll gonna need to search for vulnerabilities and exult them, which might result in hardcoding, nosleeping, etc... Yeap, this is your dirty and ungrateful part of job.  
+Wreckuests is a script, which allows you to run DDoS attacks with HTTP-flood(GET/POST). It's written in pure Python and uses proxy-servers as "bots". OF COURSE, this script is not universal and you can't just drop Pentagon/NSA/whatever website with just a single mouse click. Each attack is unique, and for each website you'd need to search for vulnerabilities and exult them.
 
-:warning: **Warning:** This script is published for educational purposes only! Author will accept no responsibility for any consequence, damage or loss which might result from use.
+**Warning:** This script is published for educational purposes only! Author will accept no responsibility for any consequences, damage or loss which might result from use.
 ## Features
-* Cache bypass with random `?abcd=efg` parameter
+* Cache bypass with URL parameters randomization
 * CloudFlare detection and notification of
 * Automatic gzip/deflate toggling
 * HTTP Authentication bypass
@@ -26,7 +26,7 @@ TODO tasks are given in [Projects](https://github.com/JamesJGoodwin/PYg0odwin/pr
 * [netaddr](https://pypi.python.org/pypi/netaddr) <sub>tested with 0.7.19</sub>
 
 ## Installation
-This is so easy to install Wreckuests just in one command. Isn't it? Just clone repository in the disired directory and run installation script:
+Just clone repository in the disired directory and run the installation script:
 
 ```bash
 chmod +x install.sh
