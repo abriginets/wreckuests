@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys, os, threading, random, requests, time, getopt, socket
+import sys, os, threading, random, requests, time, getopt, socket, urllib.parse
 from threading import Thread, Event
 from netaddr import IPNetwork, IPAddress
 from requests.auth import HTTPBasicAuth
@@ -51,7 +51,7 @@ def main(argv):
 		elif opt in ('-v', '--victim'):
 			if len(arg) >= 1:
 				global url
-				url = arg
+				url = urllib.parse.unquote(arg)
 				# defining protocol
 				global proto
 				link = urlparse(url)
